@@ -26,7 +26,7 @@ class MenuItemControllerIntegrationTest(@Autowired private val wac: WebApplicati
 
 	@Test
 	fun `menu item endpoint fails for unauthenticated request`() {
-		mockMvc.get("/api/menu/items")
+		mockMvc.get("/api/menu/item")
 				.andExpect {
 					status { isUnauthorized }
 				}
@@ -35,7 +35,7 @@ class MenuItemControllerIntegrationTest(@Autowired private val wac: WebApplicati
 	@Test
 	@WithMockUser(username="user")
 	fun `menu item endpoint succeeds for authenticated request`() {
-		mockMvc.get("/api/menu/items")
+		mockMvc.get("/api/menu/item")
 				.andExpect {
 					status { isOk }
 					content { contentType(MediaType.APPLICATION_JSON) }

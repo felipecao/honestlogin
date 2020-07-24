@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class MenuItemController(@Autowired private val menuItemRepository: MenuItemRepository) {
 
-    @GetMapping("/api/menu/items")
+    @GetMapping("/api/menu/item")
     fun getMenuItems(): ResponseEntity<List<MenuItem>> {
         val menuItems = menuItemRepository.findAll()
         return ResponseEntity.ok().body(menuItems)
