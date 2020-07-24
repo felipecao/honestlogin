@@ -1,15 +1,17 @@
 package com.github.felipecao.honestlogin.config
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
+import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint
 
 @Configuration
 @EnableWebSecurity
-class WebSecurityConfig : WebSecurityConfigurerAdapter() {
+class WebSecurityConfig(@Autowired private val authenticationEntryPoint: BasicAuthenticationEntryPoint) : WebSecurityConfigurerAdapter() {
 
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
@@ -21,7 +23,10 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
                 .permitAll()
                 .and()
             .logout()
-                .permitAll();
+                .permitAll()
+                .and()
+            .httpBasic()
+                .authenticationEntryPoint(authenticationEntryPoint)
     }
 
     @Bean
