@@ -18,7 +18,7 @@ class UserServiceTest() {
     private val userService: UserService = UserService(userRepository)
 
     @Test
-    fun should_throw_exception_if_user_is_not_found() {
+    fun `should throw exception if user is not found`() {
         whenever(userRepository.findByUsername(username)).thenReturn(null)
 
         assertThrows(UsernameNotFoundException::class.java) {
@@ -27,7 +27,7 @@ class UserServiceTest() {
     }
 
     @Test
-    fun should_return_valid_user_if_username_exists() {
+    fun `should return valid user if username exists`() {
         whenever(userRepository.findByUsername(username)).thenReturn(User(username = username, password = ""))
 
         val userDetails = userService.loadUserByUsername(username)
