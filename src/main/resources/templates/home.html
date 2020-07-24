@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Honest Login</title>
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,200,500,600,700,800,300" rel="stylesheet" />
+    <link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+    <link th:href="@{/css/fonts.css}" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-<h1>Welcome to Honest Login!</h1>
+<div id="wrapper">
+    <div id="menu-wrapper">
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a th:href="@{/web/menu/item}">Honest Login</a></h1>
+                    <p><a th:href="@{/web/menu/item}">Please click here to see our menu</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="banner"></div>
+    <div id="page" class="container">
+        <div id="content">
+            <div class="title">
+                <h2>What is this?</h2>
+                <span class="byline">Conveying a bit better what I did here...</span> </div>
+            <p>This is <strong>GrassyGreen</strong>, a free, fully standards-compliant CSS template designed by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you give us credit for it. Have fun :) </p>
+            <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. Pellentesque adipiscing purus ac magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.  Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. </p>
+        </div>
+        <div id="sidebar">
+            <div class="box2">
+                <div class="title">
+                    <h2>Read more</h2>
+                </div>
+                <ul class="style2">
+                    <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
+                    <li><a href="#">Ornare in hendrerit in lectus</a></li>
+                    <li><a href="#">Semper mod quis eget mi dolore</a></li>
+                    <li><a href="#">Quam turpis feugiat sit dolor</a></li>
+                    <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
+                    <li><a href="#">Quam turpis feugiat sit dolor</a></li>
+                    <li><a href="#">Consequat etiam lorem phasellus</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>Click <a th:href="@{/web/menu/item}">here</a> to see our menu!</p>
+<div id="footer-wrapper">
+    <div id="footer" class="container">
+        <div id="box1">
+            <div class="title">
+                <h2>About the author</h2>
+            </div>
+            <p>More than a developer, I'm a software enthusiast. I love everything about it: writing clean, neat and well tested code; understanding the needs our team is trying to meet; interacting with people to learn and share; trying to uncover an improvement that will make us waste less resources and deliver faster; and especially solving different puzzles every day. In other words, I'm a software octopus, always trying to put my hands on everything that surrounds delivering a working piece of software. </p>
+        </div>
+        <div id="box3">
+            <div class="title">
+                <h2>Follow the author</h2>
+            </div>
+            <ul class="contact">
+                <li><a href="https://github.com/felipecao" class="icon icon-github"><span>GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/felipe-carvalho-16311111/" class="icon icon-linkedin"><span>LinkedIn</span></a></li>
+            </ul>
+    </div>
+</div>
+</div>
+<div id="copyright" class="container">
+    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by GrassyGrass on <a href="https://templated.co/grassygrass" rel="nofollow">TEMPLATED</a>.</p>
+</div>
 </body>
+
+
+
 </html>

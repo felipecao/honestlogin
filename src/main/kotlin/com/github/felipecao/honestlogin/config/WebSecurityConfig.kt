@@ -15,7 +15,15 @@ class WebSecurityConfig(@Autowired private val authenticationEntryPoint: BasicAu
 
     override fun configure(http: HttpSecurity) {
         http.authorizeRequests()
-                .antMatchers("/", "/home").permitAll()
+                .antMatchers("/",
+                        "/home",
+                        "/static/**",
+                        "/css/**",
+                        "/images/**",
+                        "/fonts/**",
+                        "/js/**",
+                        "/vendor/**")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
