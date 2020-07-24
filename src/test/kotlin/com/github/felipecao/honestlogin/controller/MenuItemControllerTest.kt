@@ -17,7 +17,7 @@ class MenuItemControllerTest {
     private val menuItemController = MenuItemController(menuItemRepository)
 
     @Test
-    fun should_return_empty_collection() {
+    fun `should return empty collection`() {
         val response = menuItemController.getMenuItems()
 
         assertEquals(HttpStatus.OK, response.statusCode)
@@ -25,7 +25,7 @@ class MenuItemControllerTest {
     }
 
     @Test
-    fun should_return_two_menu_items() {
+    fun `should return two menu items`() {
         val menuItems = listOf(
                 MenuItem(id = 1L, name = randomString(), description = randomString(), price = randomBigDecimal()),
                 MenuItem(id = 2L, name = randomString(), description = randomString(), price = randomBigDecimal())
