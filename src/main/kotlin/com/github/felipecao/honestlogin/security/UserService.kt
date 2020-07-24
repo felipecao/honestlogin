@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Component
 
 @Component
-class UserService(@Autowired val userRepository: UserRepository) : UserDetailsService {
+class UserService(@Autowired private val userRepository: UserRepository) : UserDetailsService {
     override fun loadUserByUsername(username: String): UserDetails {
         val user = userRepository.findByUsername(username) ?: throw UsernameNotFoundException(username)
         return Principal(user, BCryptPasswordEncoder())
