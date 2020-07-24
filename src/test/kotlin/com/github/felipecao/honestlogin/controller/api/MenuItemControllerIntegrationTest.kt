@@ -1,4 +1,4 @@
-package com.github.felipecao.honestlogin.controller
+package com.github.felipecao.honestlogin.controller.api
 
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

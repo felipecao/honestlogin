@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Honest Login</title>
 </head>
 <body>
-<h1 th:inline="text">What would you like to have today, [[${#httpServletRequest.remoteUser}]]?</h1>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+    <h1 th:inline="text">What would you like to have today, [[${#httpServletRequest.remoteUser}]]?</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="menuItem : ${menuItems}">
+            <td><span th:text="${menuItem.name}"> Name </span></td>
+            <td><span th:text="${menuItem.description}"> Description </span></td>
+            <td>€<span th:text="${menuItem.price}"> Price </span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
 </body>
 </html>

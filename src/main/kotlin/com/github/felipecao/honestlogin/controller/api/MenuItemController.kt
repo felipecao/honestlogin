@@ -1,4 +1,4 @@
-package com.github.felipecao.honestlogin.controller
+package com.github.felipecao.honestlogin.controller.api
 
 import com.github.felipecao.honestlogin.domain.MenuItem
 import com.github.felipecao.honestlogin.domain.MenuItemRepository
