@@ -17,5 +17,8 @@ data class MenuItem (
         val description: String,
 
         @Column(nullable = false)
-        val price: BigDecimal
+        val price: BigDecimal,
+
+        @Column(nullable = false)
+        val imageUrl: String
 )
