@@ -1,29 +1,61 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Honest Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link th:href="@{/css/templatemo-style.css}" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-    <h1 th:inline="text">What would you like to have today, [[${#httpServletRequest.remoteUser}]]?</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="menuItem : ${menuItems}">
-            <td><span th:text="${menuItem.name}"> Name </span></td>
-            <td><span th:text="${menuItem.description}"> Description </span></td>
-            <td>€<span th:text="${menuItem.price}"> Price </span></td>
-        </tr>
-        </tbody>
-    </table>
+<div class="container">
+    <div class="placeholder">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="https://honestgreens.com/wp-content/uploads/2019/02/rambla-05.jpg">
+            <div class="tm-header">
+                <div class="row tm-header-inner">
+                    <div class="col-md-6 col-12">
+                        <img th:src="@{/images/simple-house-logo.png}" alt="Logo" class="tm-site-logo" />
+                        <div class="tm-site-text-box">
+                            <h1 class="tm-site-title">Honest Login</h1>
+                            <form th:action="@{/logout}" method="post">
+                                <input type="submit" class="signout" value="Sign Out"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>
+    <main>
+        <header class="row tm-welcome-section">
+            <h2 class="col-12 text-center tm-section-title">What would you like to have today, [[${#httpServletRequest.remoteUser}]]?</h2>
+        </header>
+
+        <!-- Gallery -->
+        <div class="row tm-gallery">
+            <!-- gallery page 1 -->
+            <div id="tm-gallery-page" class="tm-gallery-page">
+                <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" th:each="menuItem : ${menuItems}">
+                    <figure>
+                        <img th:src="${menuItem.imageUrl}" alt="Image" class="img-fluid tm-gallery-img" />
+                        <figcaption>
+                            <h4 class="tm-gallery-title"><span th:text="${menuItem.name}"> Name </span></h4>
+                            <p class="tm-gallery-description"><span th:text="${menuItem.description}"> Description </span></p>
+                            <p class="tm-gallery-price">€<span th:text="${menuItem.price}"> Price </span></p>
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="tm-footer text-center">
+        <p>Copyright &copy; 2020 Simple House | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+    </footer>
+</div>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/parallax.min.js}"></script>
 </body>
+
 </html>
