@@ -51,7 +51,7 @@ command can be used to issue a `GET` request with proper Basic Auth credentials 
 curl http://localhost:8080/api/menu/item -v --user user:password
 ```
 
-**Trying the app on the cloud**
+## Trying the app on the cloud
 
 Alternatively, in case you don't want to install or start anything locally, you can try either the web app or the API directly from 
 the cloud, just use https://honestlogin.herokuapp.com/ as the base URL -- it might take a while to load it for the first time,
