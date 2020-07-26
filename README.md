@@ -111,3 +111,7 @@ a unit test would add some value here.
 
 Finally, to guarantee that the whole authentication / authorization plumbing is working at all times, along with all other 
 components, I decided to write `MenuItemControllerIntegrationTest` and test scenarios would auth would fail and succeed.
+
+## Feedback
+
+I believe feedback is a crucial part of any human interaction. If you got this far, could I ask you to give me some feedback about your experience trying out this app? I'm totally open to constructive feedback, just let me know your thoughts!
